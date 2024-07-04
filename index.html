@@ -75,7 +75,7 @@
         </div>
         <h1>Modals</h1>
         <button onclick="Telegram.WebApp.showAlert('Hello World!');">Launch Alert sdfs</button>
-        <button onclick="showPopup();">Launch Popup</button>
+        <button onclick="runAds();">Launch Popup</button>
 
         <h1>Links</h1>
         <ul>
@@ -127,6 +127,20 @@
             })
         });
         Telegram.WebApp.MainButton.show();
+
+        function runAds() {
+            const AdController = window.Adsgram.init({
+                blockId: "566"
+            });
+            AdController.show().then((result) => {
+                // user watch ad till the end
+                // your code to reward user
+            }).catch((result) => {
+                // user skipped video or get error during playing ad
+                // do nothing or whatever you want
+            })
+
+        }
 
         // Function to call showPopup API
         function showPopup() {
